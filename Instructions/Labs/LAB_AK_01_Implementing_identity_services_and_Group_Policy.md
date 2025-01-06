@@ -23,7 +23,7 @@ lab:
 1. To verify that the AD DS role is installed on **SEA-SVR1**, enter the following command, and then press Enter:
 	
    ```powershell
-   Get-WindowsFeature –ComputerName SEA-SVR1
+   Invoke-Command -ComputerName SEA-SVR1 -Credential (Get-Credential) -ScriptBlock {Get-WindowsFeature –ComputerName SEA-SVR1}
    ```
 1. In the output of the previous command, search for the **Active Directory Domain Services** checkbox, and then verify that it is selected. Then, search for **Remote Server Administration Tools**. Notice the **Role Administration Tools** node below it, and then verify that the **AD DS and AD LDS Tools** node is also selected.
 
