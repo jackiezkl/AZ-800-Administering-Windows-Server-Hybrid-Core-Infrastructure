@@ -18,7 +18,7 @@ lab:
 1. To install the AD DS server role, at the Windows PowerShell command prompt, enter the following command, and then press Enter:
 	
    ```powershell
-   Install-WindowsFeature –Name AD-Domain-Services –ComputerName SEA-SVR1
+   Invoke-Command -ComputerName SEA-SVR1 -Credential (Get-Credential) -ScriptBlock {Install-WindowsFeature -Name AD-Domain-Services}
    ```
 1. To verify that the AD DS role is installed on **SEA-SVR1**, enter the following command, and then press Enter:
 	
