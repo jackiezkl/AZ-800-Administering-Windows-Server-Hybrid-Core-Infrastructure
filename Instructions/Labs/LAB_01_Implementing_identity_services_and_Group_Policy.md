@@ -60,7 +60,7 @@ The main tasks for this exercise are as follows:
    - Type: Additional domain controller for existing domain
    - Domain: `contoso.com`
    - Insert the credentials provided by the instructor.
-   - Directory Services Restore Mode (DSRM) password: **Pa55w.rd**
+   - Directory Services Restore Mode (DSRM) password: **azurePa55w.rd**
    - Do not remove the selections for DNS and the global catalog
 
 1. On the **Review Options** page, select **View Script**.
@@ -86,7 +86,7 @@ The main tasks for this exercise are as follows:
 
 1. Insert the credentials provided by the instructor.
 
-2. Set the **SafeModeAdministratorPassword** as **Pa55w.rd**.
+2. Set the **SafeModeAdministratorPassword** as **azurePa55w.rd**.
 3. After **SEA-SVR1** restarts, on **SEA-ADM1**, switch to **Server Manager**, and then select the **AD DS** node. Note that **SEA-SVR1** has been added as a domain controller and that the warning notification has disappeared. You might have to select **Refresh**.
 
 #### Task 3: Manage objects in AD DS
@@ -102,7 +102,7 @@ The main tasks for this exercise are as follows:
    ```powershell
    New-ADUser -Name Ty -DisplayName 'Ty Carlson' -GivenName Ty -Surname Carlson -Path 'OU=Seattle,DC=contoso,DC=com'
    ```
-1. To set the user's password to **Pa55w.rd**, run the following command:
+1. To set the user's password to **azurePa55w.rd**, run the following command:
 
    ```powershell
    Set-ADAccountPassword Ty
@@ -170,7 +170,7 @@ The main tasks for this exercise are as follows:
 
 1. On **SEA-ADM1**, open **Control Panel**.
 1. Use the **Windows Defender Firewall** interface to enable **Remote Event Log Management** domain traffic. 
-1. Sign out, and then sign in as **CONTOSO\\Ty** with the password **Pa55w.rd**.
+1. Sign out, and then sign in as **CONTOSO\\Ty** with the password **azurePa55w.rd**.
 1. Attempt to change the screen saver wait time and resume settings. Verify that Group Policy blocks these actions.
 1. Attempt to run Registry Editor. Verify that Group Policy blocks this action. 
 1. Sign out and then sign in with the credentials provided by the instructor.
